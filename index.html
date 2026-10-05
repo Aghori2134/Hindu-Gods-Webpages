@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine gods</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="icon" type="image/png" href="https://png.pngtree.com/png-vector/20260422/ourmid/pngtree-hindu-god-vishnu-illustration-with-traditional-attire-and-symbols-png-image_19150634.webp">
+    <style>
+        .cosmic-gradient {
+            background: linear-gradient(135deg, #0b1329 0%, #111c3a 50%, #1a2850 100%);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fef08a 0%, #d99b26 50%, #b45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+		.hero{
+			background-image:url('images/hero.png');
+		}
+		.text{
+			animation:appear 0.5s linear;
+		}
+		@keyframes appear{
+			from{
+				opacity:0;
+				transform:translateY(40px);
+				filter:blur(5px);
+			}
+			to{
+				opacity: 1;
+				transform: translateY(0);
+				filter: blur(0);
+			}
+		}
+		.card{
+				animation:card linear;
+				animation-timeline:view();
+				animation-range:0% 40%;
+		}
+		@keyframes card{
+			from {
+				opacity: 0;
+				filter: blur(6px);
+				transform:translateY(60px);
+			}
+		
+			to {
+				opacity: 1;
+				filter: blur(0);
+				transform:translateY(0);
+			}
+		}
+		.card2{
+				animation:card2 linear;
+				animation-timeline:view();
+				animation-range:0% 40%;
+		}
+		@keyframes card2{
+			from {
+				opacity: 0;
+				filter: blur(6px);
+				transform:translateX(60px);
+			}
+		
+			to {
+				opacity: 1;
+				filter: blur(0);
+				transform:translateX(0);
+			}
+		}
+		.card3{
+				animation:card3 linear;
+				animation-timeline:view();
+				animation-range:0% 40%;
+		}
+		@keyframes card3{
+			from {
+				opacity: 0;
+				filter: blur(6px);
+				transform:translateX(-60px);
+			}
+		
+			to {
+				opacity: 1;
+				filter: blur(0);
+				transform:translateX(0);
+			}
+		}
+		.progress {
+			position:fixed;
+			top:0;
+			left:0;
+			width:3px;
+			height:100%;
+			background-color:#E17F1B;
+			animation: progress linear;
+			z-index: 9999;
+			transform-origin: 50% 0;
+			animation-timeline: scroll();
+		}
+
+		@keyframes progress {
+			from { transform: scaleY(0); }
+			to { transform: scaleY(1); }
+		}
+    </style>
+</head>
+<body class="bg-[#fdfbf7] text-[#0b1329] font-sans antialiased min-h-screen flex flex-col lg:flex-row">
+	<div class="progress"></div>
+    <aside class="w-full lg:w-72 bg-[#0b1329] text-[#fdfbf7] flex flex-col justify-between border-r border-[#d99b26]/20 shadow-2xl lg:fixed lg:inset-y-0 lg:left-0 z-40">
+        <div class="p-6 border-b border-[#111c3a] flex items-center space-x-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#d99b26] to-[#ea580c] flex items-center justify-center shadow-lg text-[#0b1329] font-['Cinzel'] text-2xl font-black">
+                ॐ
+            </div>
+            <div>
+                <h1 class="font-['Cinzel'] font-bold text-lg tracking-wider text-[#f5c35b]">DIVINE GODS</h1>
+            </div>
+        </div>
+        <nav class="flex-1 px-4 py-6  overflow-y-hidden">
+            <a href="#home" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-[#111c3a] text-[#fdfbf7]/80 hover:text-[#f5c35b] transition-all group">
+                <i class="fa-solid fa-house-chimney w-6 text-center group-hover:scale-110 transition-transform"></i>
+                <span>Home</span>
+            </a>
+            <a href="#deities" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-[#111c3a] text-[#fdfbf7]/80 hover:text-[#f5c35b] transition-all group">
+                <i class="fa-solid fa-om w-6 text-center group-hover:scale-110 transition-transform"></i>
+                <span>Deities Pantheon</span>
+            </a>
+            <a href="#mythology" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-[#111c3a] text-[#fdfbf7]/80 hover:text-[#f5c35b] transition-all group">
+                <i class="fa-solid fa-book-bookmark w-6 text-center group-hover:scale-110 transition-transform"></i>
+                <span>Mythology & Epics</span>
+            </a>
+            <a href="#festivals" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-[#111c3a] text-[#fdfbf7]/80 hover:text-[#f5c35b] transition-all group">
+                <i class="fa-solid fa-calendar-days w-6 text-center group-hover:scale-110 transition-transform"></i>
+                <span>Festivals & Calendar</span>
+            </a>
+            <a href="#temples" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-[#111c3a] text-[#fdfbf7]/80 hover:text-[#f5c35b] transition-all group">
+                <i class="fa-solid fa-gopuram w-6 text-center group-hover:scale-110 transition-transform"></i>
+                <span>Sacred Temples</span>
+            </a>
+            <a href="#rituals" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-[#111c3a] text-[#fdfbf7]/80 hover:text-[#f5c35b] transition-all group">
+                <i class="fa-solid fa-fire-burner w-6 text-center group-hover:scale-110 transition-transform"></i>
+                <span>Rituals & Pujas</span>
+            </a>
+            <a href="#blog" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-[#111c3a] text-[#fdfbf7]/80 hover:text-[#f5c35b] transition-all group">
+                <i class="fa-solid fa-feather-pointed w-6 text-center group-hover:scale-110 transition-transform"></i>
+                <span>Spiritual Blog</span>
+            </a>
+            <a href="#gallery" class="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-[#111c3a] text-[#fdfbf7]/80 hover:text-[#f5c35b] transition-all group">
+                <i class="fa-solid fa-images w-6 text-center group-hover:scale-110 transition-transform"></i>
+                <span>Divine Gallery</span>
+            </a>
+        </nav>
+        <div class="p-4 m-4 bg-[#111c3a] rounded-2xl border border-[#d99b26]/20 shadow-inner">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-[10px] font-semibold uppercase tracking-wider text-[#d99b26]">Daily Mantra</span>
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d99b26] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-[#d99b26]"></span>
+                </span>
+            </div>
+            <p class="text-xs font-['Playfair_Display'] font-bold text-white mb-1">Om Namah Shivaya</p>
+            <p class="text-[11px] text-[#fdfbf7]/70 italic">"Salutations to the auspicious Lord who transforms and frees us from worldly illusion."</p>
+        </div>
+    </aside>
+    <div class="flex-1 lg:ml-72 flex flex-col min-h-screen">
+        <header class="bg-white/90 backdrop-blur-md border-b border-[#f5efe6] sticky top-0 z-30 px-6 py-4 flex items-center justify-between shadow-xs">
+            
+            <div class="flex items-center space-x-4">
+                <div class="relative hidden sm:block">
+                    <input type="text" placeholder="Search deities, mantras, epics..." class="bg-[#f5efe6]/60 border border-[#f5efe6] focus:border-[#d99b26] text-xs rounded-full pl-10 pr-4 py-2 focus:outline-none w-64 transition">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-[#0b1329]/40 text-xs"></i>
+                </div>
+                <a href="#donate" class="bg-gradient-to-r from-[#d99b26] to-[#ea580c] text-[#0b1329] font-bold px-5 py-2 rounded-full text-xs shadow hover:opacity-95 transition flex items-center space-x-2">
+                    <i class="fa-solid fa-hands-holding-child"></i>
+                    <span>Support Temple</span>
+                </a>
+            </div>
+        </header>
+        <section id="home" class="relative cosmic-gradient text-white py-24 px-8 lg:px-16 overflow-hidden flex flex-col justify-center min-h-[580px] hero">
+            <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-[#d99b26]/10 blur-3xl pointer-events-none"></div>
+            <div class="absolute left-10 top-10 w-72 h-72 rounded-full bg-[#ea580c]/10 blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-4xl relative z-10 text">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#d99b26]/20 border border-[#d99b26]/40 text-[#f5c35b] text-xs font-semibold mb-6 uppercase tracking-widest">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span>Welcome to Eternal Wisdom</span>
+                </div>
+                <h1 class="font-['Cinzel'] text-4xl lg:text-6xl font-black tracking-tight mb-6 leading-tight">
+                    Honoring the <span class="gold-gradient-text">Divine</span>
+                </h1>
+                <p class="font-['Playfair_Display'] text-lg lg:text-xl text-[#fdfbf7]/90 max-w-2xl mb-8 leading-relaxed">
+                    Embark on a sacred journey into the cosmic stories, immortal archetypes, and profound philosophical icons of Hindu Deities and eternal Sanatan heritage.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#deities" class="bg-[#d99b26] hover:bg-[#f5c35b] text-[#0b1329] font-bold px-8 py-3.5 rounded-full transition shadow-lg flex items-center space-x-2 text-sm">
+                        <span>Explore Pantheon</span>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+                    <a href="#mythology" class="border border-[#d99b26]/50 hover:bg-[#d99b26]/10 text-[#fdfbf7] font-semibold px-8 py-3.5 rounded-full transition text-sm">
+                        Discover Epics
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="deities" class="py-16 px-6 lg:px-16 bg-[#fdfbf7]">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                    <div>
+                        <span class="text-xs uppercase font-bold tracking-widest text-[#b45309]">Venerated Forms</span>
+                        <h2 class="font-['Cinzel'] text-3xl font-bold text-[#0b1329] mt-1">Sacred Deities of the Pantheon</h2>
+                    </div>
+                    <p class="text-xs text-[#0b1329]/70 max-w-sm mt-2 md:mt-0">Explore the divine manifestations representing cosmic creation, preservation, destruction, wisdom, and boundless devotion.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-2xl overflow-hidden border border-[#f5efe6] shadow-md hover:shadow-xl transition-all group flex flex-col card">
+                        <div class="relative h-56 bg-[#0b1329] overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyY7-gdVyHXAnaI7EwocMxk1tufnPL7OiUee9R9HtLVg&s=10" alt="Lord Ganesha" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Ganesha'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329]/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 bg-[#d99b26]/90 text-[#0b1329] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Remover of Obstacles</span>
+                            <h3 class="absolute bottom-3 left-4 font-['Cinzel'] text-xl font-bold text-white">Lord Ganesha</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <p class="text-xs text-[#0b1329]/70 mb-4 leading-relaxed">The elephant-headed deity of wisdom, prosperity, and new beginnings, invoked before any sacred undertaking.</p>
+                            <div class="pt-3 border-t border-[#f5efe6] flex items-center justify-between">
+                                <span class="text-[11px] font-semibold text-[#b45309]">Mantra: Om Gam Ganapataye</span>
+                                <a href="#deities" class="text-xs font-bold text-[#ea580c] hover:underline">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden border border-[#f5efe6] shadow-md hover:shadow-xl transition-all group flex flex-col card">
+                        <div class="relative h-56 bg-[#0b1329] overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_4KDfQht-g7EGIm2yhbBVoBDj1kDvN1480rT34kHZCw&s=10" alt="Lord Shiva" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Shiva'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329]/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 bg-[#d99b26]/90 text-[#0b1329] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">The Destroyer</span>
+                            <h3 class="absolute bottom-3 left-4 font-['Cinzel'] text-xl font-bold text-white">Lord Shiva</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <p class="text-xs text-[#0b1329]/70 mb-4 leading-relaxed">The supreme yogi, transformer, and cosmic dancer (Nataraja) who dissolves the universe to recreate it in harmony.</p>
+                            <div class="pt-3 border-t border-[#f5efe6] flex items-center justify-between">
+                                <span class="text-[11px] font-semibold text-[#b45309]">Mantra: Om Namah Shivaya</span>
+                                <a href="#deities" class="text-xs font-bold text-[#ea580c] hover:underline">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden border border-[#f5efe6] shadow-md hover:shadow-xl transition-all group flex flex-col card">
+                        <div class="relative h-56 bg-[#0b1329] overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNQwB5q7Wad7TSid9S2zOyEKTaEeysgCkROOyY5-2AA&s=10" alt="Lord Vishnu" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Vishnu'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329]/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 bg-[#d99b26]/90 text-[#0b1329] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">The Preserver</span>
+                            <h3 class="absolute bottom-3 left-4 font-['Cinzel'] text-xl font-bold text-white">Lord Vishnu</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <p class="text-xs text-[#0b1329]/70 mb-4 leading-relaxed">The preserver and protector of creation who incarnates in various avatars (Rama, Krishna) to restore Dharma.</p>
+                            <div class="pt-3 border-t border-[#f5efe6] flex items-center justify-between">
+                                <span class="text-[11px] font-semibold text-[#b45309]">Mantra: Om Namo Bhagavate</span>
+                                <a href="#deities" class="text-xs font-bold text-[#ea580c] hover:underline">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden border border-[#f5efe6] shadow-md hover:shadow-xl transition-all group flex flex-col card">
+                        <div class="relative h-56 bg-[#0b1329] overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfuo9_6GYD-m4AUpIkvxFxX_8wb4RrRhEmw17UvotevQ&s=10" alt="Goddess Durga" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Durga'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329]/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 bg-[#d99b26]/90 text-[#0b1329] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Divine Mother</span>
+                            <h3 class="absolute bottom-3 left-4 font-['Cinzel'] text-xl font-bold text-white">Goddess Durga</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <p class="text-xs text-[#0b1329]/70 mb-4 leading-relaxed">The fierce and compassionate warrior goddess embodying divine Shakti, vanquishing negativity and protecting devotees.</p>
+                            <div class="pt-3 border-t border-[#f5efe6] flex items-center justify-between">
+                                <span class="text-[11px] font-semibold text-[#b45309]">Mantra: Om Dum Durgayei</span>
+                                <a href="#deities" class="text-xs font-bold text-[#ea580c] hover:underline">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden border border-[#f5efe6] shadow-md hover:shadow-xl transition-all group flex flex-col card">
+                        <div class="relative h-56 bg-[#0b1329] overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRphMMITXS0No89BOJdsHzgSevRkfggs2JoSIkDIBPyLA&s=10" alt="Lord Krishna" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Krishna'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329]/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 bg-[#d99b26]/90 text-[#0b1329] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Avatar of Love</span>
+                            <h3 class="absolute bottom-3 left-4 font-['Cinzel'] text-xl font-bold text-white">Lord Krishna</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <p class="text-xs text-[#0b1329]/70 mb-4 leading-relaxed">The divine cowherd, philosopher prince, and speaker of the Bhagavad Gita, enchanting all with his flute.</p>
+                            <div class="pt-3 border-t border-[#f5efe6] flex items-center justify-between">
+                                <span class="text-[11px] font-semibold text-[#b45309]">Mantra: Hare Krishna</span>
+                                <a href="#deities" class="text-xs font-bold text-[#ea580c] hover:underline">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden border border-[#f5efe6] shadow-md hover:shadow-xl transition-all group flex flex-col card">
+                        <div class="relative h-56 bg-[#0b1329] overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn5ud28gu99zSgsrIjly8Q-eKqNkOV8l85Wbykpl5Hyw&s=10" alt="Lord Hanuman" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Hanuman'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329]/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 bg-[#d99b26]/90 text-[#0b1329] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Symbol of Devotion</span>
+                            <h3 class="absolute bottom-3 left-4 font-['Cinzel'] text-xl font-bold text-white">Lord Hanuman</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <p class="text-xs text-[#0b1329]/70 mb-4 leading-relaxed">The epitome of selfless service, boundless strength, and unwavering devotion to Lord Rama.</p>
+                            <div class="pt-3 border-t border-[#f5efe6] flex items-center justify-between">
+                                <span class="text-[11px] font-semibold text-[#b45309]">Mantra: Om Hanumate Namah</span>
+                                <a href="#deities" class="text-xs font-bold text-[#ea580c] hover:underline">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden border border-[#f5efe6] shadow-md hover:shadow-xl transition-all group flex flex-col card">
+                        <div class="relative h-56 bg-[#0b1329] overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_6H7FxoSe_7ZuH8MnFGbewGCCkwv-YFvK037Qpm078w&s=10" alt="Goddess Saraswati" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Saraswati'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329]/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 bg-[#d99b26]/90 text-[#0b1329] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Goddess of Knowledge</span>
+                            <h3 class="absolute bottom-3 left-4 font-['Cinzel'] text-xl font-bold text-white">Goddess Saraswati</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <p class="text-xs text-[#0b1329]/70 mb-4 leading-relaxed">The patron of learning, arts, music, speech, and wisdom, adorned in pristine white with the Veena.</p>
+                            <div class="pt-3 border-t border-[#f5efe6] flex items-center justify-between">
+                                <span class="text-[11px] font-semibold text-[#b45309]">Mantra: Om Aim Saraswatyai</span>
+                                <a href="#deities" class="text-xs font-bold text-[#ea580c] hover:underline">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden border border-[#f5efe6] shadow-md hover:shadow-xl transition-all group flex flex-col card">
+                        <div class="relative h-56 bg-[#0b1329] overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY_d2D-oZJUVtq2tQeWa_O1xxYhoKWyHOxfvmKP80l4w&s=10" alt="Goddess Lakshmi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Lakshmi'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0b1329]/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 bg-[#d99b26]/90 text-[#0b1329] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Goddess of Abundance</span>
+                            <h3 class="absolute bottom-3 left-4 font-['Cinzel'] text-xl font-bold text-white">Goddess Lakshmi</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <p class="text-xs text-[#0b1329]/70 mb-4 leading-relaxed">The bestower of spiritual and material wealth, fortune, beauty, and auspicious grace.</p>
+                            <div class="pt-3 border-t border-[#f5efe6] flex items-center justify-between">
+                                <span class="text-[11px] font-semibold text-[#b45309]">Mantra: Om Shreem Mahalakshmyai</span>
+                                <a href="#deities" class="text-xs font-bold text-[#ea580c] hover:underline">Learn More &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="mythology" class="py-16 px-6 lg:px-16 bg-[#f5efe6]/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs uppercase font-bold tracking-widest text-[#b45309]">Eternal Chronicles</span>
+                    <h2 class="font-['Cinzel'] text-3xl font-bold text-[#0b1329] mt-1">Sacred Epics & Timeless Tales</h2>
+                    <p class="text-[#0b1329]/70 text-xs mt-2">Immerse yourself in the grand narratives that shaped spiritual philosophy and moral duty across generations.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-3xl overflow-hidden border border-[#f5efe6] shadow-lg flex flex-col md:flex-row group card3">
+                        <div class="md:w-1/2 relative min-h-[240px]">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcYCij1N5oYT3Durg66su9u5EfIyU7t3hnoyWkn5u97g&s=10" alt="Mahabharata Epic" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Mahabharata'">
+                        </div>
+                        <div class="md:w-1/2 p-6 flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#f5efe6] text-[#0b1329] uppercase tracking-widest">Great Epic</span>
+                                <h3 class="font-['Cinzel'] text-xl font-bold text-[#0b1329] mt-2 mb-3">The Mahabharata</h3>
+                                <p class="text-xs text-[#0b1329]/70 leading-relaxed mb-4">Authored by Sage Vyasa, this monumental epic chronicles the Kurukshetra War and houses the eternal wisdom of the Bhagavad Gita.</p>
+                            </div>
+                            <a href="#mythology" class="text-[#ea580c] font-bold text-xs hover:underline flex items-center space-x-1">
+                                <span>Read Epic Overview</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl overflow-hidden border border-[#f5efe6] shadow-lg flex flex-col md:flex-row group card2">
+                        <div class="md:w-1/2 relative min-h-[240px]">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwN_tt1AVYdLYURUGHgxmF_Ap4B-lfKLxNC1iBpincCw&s=10" alt="Ramayana Epic" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Ramayana'">
+                        </div>
+                        <div class="md:w-1/2 p-6 flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#f5efe6] text-[#0b1329] uppercase tracking-widest">Divine Journey</span>
+                                <h3 class="font-['Cinzel'] text-xl font-bold text-[#0b1329] mt-2 mb-3">The Ramayana</h3>
+                                <p class="text-xs text-[#0b1329]/70 leading-relaxed mb-4">Composed by Sage Valmiki, detailing the exemplary life of Prince Rama, his adherence to Dharma, and triumph over Ravana.</p>
+                            </div>
+                            <a href="#mythology" class="text-[#ea580c] font-bold text-xs hover:underline flex items-center space-x-1">
+                                <span>Read Epic Overview</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="festivals" class="py-16 px-6 lg:px-16 bg-[#0b1329] text-white relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs uppercase font-bold tracking-widest text-[#d99b26]">Auspicious Dates</span>
+                    <h2 class="font-['Cinzel'] text-3xl font-bold mt-1">Upcoming Sacred Festivals</h2>
+                    <p class="text-[#fdfbf7]/70 text-xs mt-2">Plan your spiritual observances with our live Panchang calendar countdown.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-[#111c3a]/90 rounded-2xl p-6 border border-[#d99b26]/20 shadow-lg relative overflow-hidden group card3">
+                        <div class="absolute top-0 right-0 bg-[#d99b26] text-[#0b1329] font-bold text-[11px] px-3 py-1 rounded-bl-xl">Nov 12, 2026</div>
+                        <div class="w-12 h-12 rounded-xl bg-[#d99b26]/10 border border-[#d99b26]/30 flex items-center justify-center text-[#d99b26] mb-4 text-xl">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <h3 class="font-['Cinzel'] text-xl font-bold mb-2 text-[#f5c35b]">Diwali - Festival of Lights</h3>
+                        <p class="text-xs text-[#fdfbf7]/70 mb-4 leading-relaxed">Celebrating the triumph of light over darkness, honoring Goddess Lakshmi and Lord Rama's triumphant return to Ayodhya.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-[#1a2850] text-xs">
+                            <span class="text-[#d99b26] font-semibold"><i class="fa-regular fa-clock mr-1"></i> Countdown: 38 Days</span>
+                            <a href="#festivals" class="text-white hover:text-[#d99b26] underline">Ritual Guide</a>
+                        </div>
+                    </div>
+                    <div class="bg-[#111c3a]/90 rounded-2xl p-6 border border-[#d99b26]/20 shadow-lg relative overflow-hidden group card">
+                        <div class="absolute top-0 right-0 bg-[#d99b26] text-[#0b1329] font-bold text-[11px] px-3 py-1 rounded-bl-xl">Feb 26, 2027</div>
+                        <div class="w-12 h-12 rounded-xl bg-[#d99b26]/10 border border-[#d99b26]/30 flex items-center justify-center text-[#d99b26] mb-4 text-xl">
+                            <i class="fa-solid fa-moon"></i>
+                        </div>
+                        <h3 class="font-['Cinzel'] text-xl font-bold mb-2 text-[#f5c35b]">Maha Shivaratri</h3>
+                        <p class="text-xs text-[#fdfbf7]/70 mb-4 leading-relaxed">The great night of Shiva, dedicated to the divine wedding of Lord Shiva and Goddess Parvati with night-long meditation.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-[#1a2850] text-xs">
+                            <span class="text-[#d99b26] font-semibold"><i class="fa-regular fa-clock mr-1"></i> Countdown: 144 Days</span>
+                            <a href="#festivals" class="text-white hover:text-[#d99b26] underline">Ritual Guide</a>
+                        </div>
+                    </div>
+                    <div class="bg-[#111c3a]/90 rounded-2xl p-6 border border-[#d99b26]/20 shadow-lg relative overflow-hidden group card2">
+                        <div class="absolute top-0 right-0 bg-[#d99b26] text-[#0b1329] font-bold text-[11px] px-3 py-1 rounded-bl-xl">Mar 25, 2027</div>
+                        <div class="w-12 h-12 rounded-xl bg-[#d99b26]/10 border border-[#d99b26]/30 flex items-center justify-center text-[#d99b26] mb-4 text-xl">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h3 class="font-['Cinzel'] text-xl font-bold mb-2 text-[#f5c35b]">Holi - Festival of Colors</h3>
+                        <p class="text-xs text-[#fdfbf7]/70 mb-4 leading-relaxed">Celebrating divine love of Radha-Krishna, the arrival of spring, and the victory of devotion over tyranny.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-[#1a2850] text-xs">
+                            <span class="text-[#d99b26] font-semibold"><i class="fa-regular fa-clock mr-1"></i> Countdown: 172 Days</span>
+                            <a href="#festivals" class="text-white hover:text-[#d99b26] underline">Ritual Guide</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="temples" class="py-16 px-6 lg:px-16 bg-[#fdfbf7]">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                    <div>
+                        <span class="text-xs uppercase font-bold tracking-widest text-[#b45309]">Architectural Wonders</span>
+                        <h2 class="font-['Cinzel'] text-3xl font-bold text-[#0b1329] mt-1">Sacred Temples & Shrines</h2>
+                    </div>
+                    <p class="text-xs text-[#0b1329]/70 max-w-md mt-2 md:mt-0">Explore timeless stone sanctuaries built across Bharat, showcasing exquisite Dravidian and Nagara architecture.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl overflow-hidden border border-[#f5efe6] shadow-md card3">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSvAZZsl9Sh-XLu-pezQDYaeHfvo0z31iBi5-nEnZWeg&s=10" alt="Kashi Vishwanath Temple" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Kashi+Vishwanath'">
+                        <div class="p-5">
+                            <span class="text-[10px] font-semibold text-[#ea580c] uppercase">Varanasi, Uttar Pradesh</span>
+                            <h3 class="font-['Cinzel'] text-lg font-bold text-[#0b1329] mt-1 mb-2">Kashi Vishwanath Temple</h3>
+                            <p class="text-xs text-[#0b1329]/70 mb-4">Dedicated to Lord Shiva, this is one of the most revered Jyotirlinga shrines situated on the banks of the holy river Ganges.</p>
+                            <span class="text-xs font-semibold text-[#b45309]"><i class="fa-solid fa-location-dot mr-1"></i> Varanasi</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl overflow-hidden border border-[#f5efe6] shadow-md card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMpE4KQmZsKiLGZaVE2v0teFHRwX3WMz_lCQ31t5Zhzw&s=10" alt="Meenakshi Temple" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Meenakshi+Temple'">
+                        <div class="p-5">
+                            <span class="text-[10px] font-semibold text-[#ea580c] uppercase">Madurai, Tamil Nadu</span>
+                            <h3 class="font-['Cinzel'] text-lg font-bold text-[#0b1329] mt-1 mb-2">Meenakshi Amman Temple</h3>
+                            <p class="text-xs text-[#0b1329]/70 mb-4">A historic Hindu temple featuring magnificent gopurams adorned with thousands of vibrant sculptural figures.</p>
+                            <span class="text-xs font-semibold text-[#b45309]"><i class="fa-solid fa-location-dot mr-1"></i> Madurai</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl overflow-hidden border border-[#f5efe6] shadow-md card2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3n9rQH1EwowvLct-VIjiXv9AYfdg2iH6-eIBCd_Nerg&s=10" alt="Badrinath Temple" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/0b1329/d99b26?text=Badrinath+Temple'">
+                        <div class="p-5">
+                            <span class="text-[10px] font-semibold text-[#ea580c] uppercase">Chamoli, Uttarakhand</span>
+                            <h3 class="font-['Cinzel'] text-lg font-bold text-[#0b1329] mt-1 mb-2">Badrinath Temple</h3>
+                            <p class="text-xs text-[#0b1329]/70 mb-4">Nestled in the Himalayas, this sacred abode of Lord Vishnu is a principal destination of the Char Dham pilgrimage.</p>
+                            <span class="text-xs font-semibold text-[#b45309]"><i class="fa-solid fa-location-dot mr-1"></i> Himalayas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer id="donate" class="bg-[#060a17] text-[#fdfbf7]/70 py-12 px-6 lg:px-16 border-t border-[#d99b26]/20 mt-auto">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-[#d99b26] flex items-center justify-center text-[#0b1329] font-['Cinzel'] font-bold">ॐ</div>
+                        <span class="font-['Cinzel'] font-bold text-white tracking-wider">DIVINE GODS</span>
+                    </div>
+                    <p class="text-xs text-[#fdfbf7]/60 leading-relaxed mb-4">Preserving and sharing the eternal spiritual heritage, sacred art, and philosophical wisdom of Sanatan Dharma.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 rounded-full bg-[#111c3a] flex items-center justify-center text-[#d99b26] hover:bg-[#d99b26] hover:text-[#0b1329] transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-[#111c3a] flex items-center justify-center text-[#d99b26] hover:bg-[#d99b26] hover:text-[#0b1329] transition"><i class="fa-brands fa-twitter text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-[#111c3a] flex items-center justify-center text-[#d99b26] hover:bg-[#d99b26] hover:text-[#0b1329] transition"><i class="fa-brands fa-youtube text-xs"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-[#111c3a] flex items-center justify-center text-[#d99b26] hover:bg-[#d99b26] hover:text-[#0b1329] transition"><i class="fa-brands fa-instagram text-xs"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-['Cinzel'] font-bold text-white mb-4 text-sm">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-[#d99b26] transition">Home Sanctuary</a></li>
+                        <li><a href="#deities" class="hover:text-[#d99b26] transition">Deities Pantheon</a></li>
+                        <li><a href="#mythology" class="hover:text-[#d99b26] transition">Sacred Epics</a></li>
+                        <li><a href="#festivals" class="hover:text-[#d99b26] transition">Panchang Calendar</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-['Cinzel'] font-bold text-white mb-4 text-sm">Sacred Wisdom</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#temples" class="hover:text-[#d99b26] transition">Ancient Temples</a></li>
+                        <li><a href="#rituals" class="hover:text-[#d99b26] transition">Vedic Rituals</a></li>
+                        <li><a href="#blog" class="hover:text-[#d99b26] transition">Spiritual Articles</a></li>
+                        <li><a href="#gallery" class="hover:text-[#d99b26] transition">Divine Wallpapers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-['Cinzel'] font-bold text-white mb-4 text-sm">Daily Newsletter</h4>
+                    <p class="text-xs text-[#fdfbf7]/60 mb-3">Receive daily shlokas and spiritual insights directly to your inbox.</p>
+                    <form action="#subscribe" class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Enter your email" class="bg-[#111c3a] border border-[#1a2850] rounded-xl px-4 py-2 text-xs text-white focus:outline-none focus:border-[#d99b26]" required>
+                        <button type="submit" class="bg-[#d99b26] hover:bg-[#f5c35b] text-[#0b1329] font-bold px-4 py-2 rounded-xl text-xs transition">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="p-4 border-t border-[#111c3a] text-center text-[11px] text-[#fdfbf7]/50">
+            &copy; 2026 Divine Gods. All rights reserved.
+        </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
